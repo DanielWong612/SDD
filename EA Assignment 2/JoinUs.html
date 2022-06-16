@@ -1,0 +1,67 @@
+<!doctype html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Join Us</title>
+    <link rel="stylesheet" href="index.css"/>
+	
+	<script type="text/javascript" charset="UTF-8"></script><script>
+
+
+	function print_result() {
+		var name = document.f1.firstname.value;
+		alert("Welcome " + name + " to join our club");<!--Display Welcome message-->
+	}
+
+	</script>
+  </head>
+  <style>
+	form{
+		font-size: 25px;
+	} 
+  </style>
+  <body  style="background-color:#262b38" text="white" font="21px" >
+  <div id="bar">	
+	<ul>
+		<li><a href="index.html">Home</a></li>	
+		<li><a href="MarvelMovie.html">Marvel Movie</a></li>		
+		<li><a href="TimeLine.html">TimeLine</a></li>
+		<lir><a href="JoinUs.html">Join Us</a></lir>
+	</ul>
+  </div>
+	<form name="f1" method="post" enctype="multipart/form-data" onSubmit="print_result()"><!--When submit button is clicked, call print_result() -->
+		<fieldset >
+		<legend>About You</legend>
+        First Name :	
+        <input type="text" name="firstname" pattern="([A-Z][a-z ]*)( [A-Z][a-z]*)?" title="Capital first character" required="required"/><!--The name must be start with Capital-->
+		Last Name :	
+        <input type="text" name="lastname" pattern="[A-Z][a-z]*" title="Capital first character" required="required"/> <br /><br />
+        Phone No :
+        <input list="callingCodes"  /><!--drop down list to show calling code-->
+			<datalist id="callingCodes">
+				<option value="+852" />Hong Kong
+				<option value="+1" />United States
+				<option value="+81" />Japan
+				<option value="+886" />Taiwan
+			</datalist>
+		<input name="phoneno" type="number" pattern="[0-9]{8,11}" title="Please enter 8 to 11 digit" /><br /><br /><!--The phone No. must be enter 8 to 11 digit-->
+        Gender :
+        <input type="radio" name="gender" value = "M" required="required"/>Male
+        <input type="radio" name="gender" value = "F" />Female 
+		<input type="radio" name="gender" value = "U" />Non-Binary Gender<br /><br />
+        Date of Birth
+        <input type="date" required="required"/>&nbsp;&nbsp;&nbsp;<br /><br />
+        The place to watch movie:
+        <input name="F1" type="checkbox" value="H" />Home
+        <input name="F2" type="checkbox" value="C" />Cinema
+        <input name="F3" type="checkbox" value="O" /><input name="Other" type="text" value="Other"/><br /><br />
+      </fieldset>
+	  <fieldset>
+        <legend>Why To Join Us</legend>
+        <textarea name="comment" cols="50" rows="4"></textarea><br />
+      </fieldset>
+      <center> <input type="submit" value="Join" />
+      <input type="reset" value="Cancel"/> </center>
+	</form>
+  
+  </body>
+</html>
